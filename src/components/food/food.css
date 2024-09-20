@@ -1,0 +1,11 @@
+.item-list-container {
+  max-width: 940px;
+  margin-bottom: 5rem;
+}
+
+.disclaimer {
+  text-align: center;
+  font-style: italic;
+  font-size: 14px;
+  color: #d0a44c;
+}
