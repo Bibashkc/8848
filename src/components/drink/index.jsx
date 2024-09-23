@@ -5,6 +5,11 @@ import './drink.css'
 import beer from '../../images/beer.svg'
 import wine from '../../images/wine.svg'
 import logo from '../../images/nav_logo.png'
+import signature from '../../images/signature.svg'
+import classic from '../../images/classic.svg'
+import draft from '../../images/draft.svg'
+import soft from '../../images/soft.svg'
+import shots from '../../images/shots.svg'
 import Container from '../../wrappers/Container'
 import ItemList from '../../shared/components/ItemList.component'
 import { beers, classiCocktails, signatureCocktails, wines } from '../../data/drink.data'
@@ -37,8 +42,8 @@ const Drink = () => {
       </div>
       <ItemSection>
         <>
-          <ItemSectionHeader title="SIGNATURE" subTitle="COCKTAILS" img={wine} />
-          <ItemList id="singature-cocktail">
+          <ItemSectionHeader title="SIGNATURE" subTitle="COCKTAILS" id="singature-cocktail-header" />
+          <ItemList id="singature-cocktail" background={signature}>
             {signatureCocktails.map(item => (
               <Item key={item.id} item={item} />
             ))}
@@ -48,8 +53,8 @@ const Drink = () => {
 
       <ItemSection>
         <>
-          <ItemSectionHeader title="CLASSIC" subTitle="COCKTAILS" img={wine} />
-          <ItemList id="classic-cocktail">
+          <ItemSectionHeader title="CLASSIC" subTitle="COCKTAILS" id="classic-cocktail-header" alternate={true} />
+          <ItemList id="classic-cocktail" background={classic}>
             {classiCocktails.map(item => (
               <Item key={item.id} item={item} />
             ))}
@@ -59,8 +64,8 @@ const Drink = () => {
 
       <ItemSection>
         <>
-          <ItemSectionHeader title="SHOTS" img={wine} />
-          <ItemList id="shots">
+          <ItemSectionHeader title="SHOTS" id="shots-header" />
+          <ItemList id="shots" background={shots}>
             {signatureCocktails.map(item => (
               <Item key={item.id} item={item} />
             ))}
@@ -70,8 +75,8 @@ const Drink = () => {
 
       <ItemSection>
         <>
-          <ItemSectionHeader title="Wine" img={wine} />
-          <ItemList id="wine">
+          <ItemSectionHeader title="Wine" id="wine-header" alternate={true} />
+          <ItemList id="wine" background={wine}>
             {wines.map(item => (
               <Item key={item.id} item={item} />
             ))}
@@ -81,8 +86,8 @@ const Drink = () => {
 
       <ItemSection>
         <>
-          <ItemSectionHeader title="BEER" img={beer} />
-          <ItemList id="beer">
+          <ItemSectionHeader title="BEER" id="beer-header" />
+          <ItemList id="beer" background={beer} >
             {beers.map(item => (
               <Item key={item.id} item={item} />
             ))}
@@ -92,8 +97,8 @@ const Drink = () => {
 
       <ItemSection>
         <>
-          <ItemSectionHeader title="DRAFT BEER" img={beer} />
-          <ItemList id="draft-beer">
+          <ItemSectionHeader title="DRAFT BEER" alternate={true} id="draft-beer-header" />
+          <ItemList id="draft-beer" background={draft}>
             {beers.map(item => (
               <Item key={item.id} item={item} />
             ))}
@@ -102,7 +107,12 @@ const Drink = () => {
       </ItemSection>
       <ItemSection>
         <>
-          <ItemSectionHeader title="NON-ALCOHOLIC" subTitle="DRINK" img={beer} />
+          <ItemSectionHeader title="NON-ALCOHOLIC" subTitle="DRINK" id="non-alcoholic-header" />
+          <ItemList id="non-alcoholic" background={soft}>
+            {beers.map(item => (
+              <Item key={item.id} item={item} />
+            ))}
+          </ItemList>
         </>
       </ItemSection>
       <div className='disclaimer'>

@@ -4,6 +4,7 @@
   max-width: 1500px;
   margin: auto;
   padding: 24px;
+  background-color: rgba(0, 0, 0, .9);
 }
 
 .navbar a {
